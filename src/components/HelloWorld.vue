@@ -11,12 +11,23 @@
       <div class="col">
         <div class="card">
             <div class="card-body">
-              <form>
+              <form v-on:submit.prevent="greet">
                 <div class="form-row">
                   <div class="form-group col">
                     <label for="nameInput">Nome Completo</label>
                     <input type="text" class="form-control form-control-lg" id="nameInput">
                     <small id="nameHelp" class="form-text text-muted"></small>
+                  </div>
+                  <div class="form-group col">
+                    <label for="emailInput">E-mail</label>
+                    <input type="email" class="form-control form-control-lg" id="emailInput">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col">
+                    <label for="phoneInput">Telefone</label>
+                    <input type="text" class="form-control form-control-lg" id="phoneInput">
+                    <small id="phoneHelp" class="form-text text-muted"></small>
                   </div>
                 </div>
                 <div class="form-row">
@@ -29,7 +40,7 @@
                     <input type="text" class="form-control form-control-lg" id="cpfInput">
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
               </form>
             </div>
         </div>
@@ -45,6 +56,16 @@ export default {
   data () {
     return {
       msg: 'Bem vindo a Veeve!'
+    }
+  },
+  methods: {
+    greet: function(event) {
+      this.$http.get('https://jsonplaceholder.typicode.com/posts/2').then(res => {
+        this.msg = res.body.title
+        console.log(res)
+      })
+
+      console.log(event);
     }
   }
 }
