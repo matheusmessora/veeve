@@ -74,7 +74,7 @@ export default {
       console.log("this.modelo", this.modelo)
       Ping.ping();
       this.$http.post('http://localhost:8080/prospect', this.modelo).then(res => {
-        this.msg = "FOI"
+        this.msg = "Cadastro realizado com sucesso!"
         console.log(res)
       })
       // this.$http.get('https://jsonplaceholder.typicode.com/posts/2').then(res => {
