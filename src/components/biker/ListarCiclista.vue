@@ -11,18 +11,26 @@
         <table class="table">
           <thead class="thead-light">
             <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nome</th>
               <th scope="col">CPF</th>
-              <th scope="col">Ciclista</th>
-              <th scope="col">Telefone</th>
               <th scope="col">E-mail</th>
+              <th scope="col">Status</th>
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="p in prospects">
-              <th scope="row">{{p.cpf}}</th>
+            <tr v-for="p in bikers">
+              <td>{{p.id}}</td>
               <td>{{p.name}}</td>
-              <td>{{p.phone}}</td>
+              <td>{{p.cpf}}</td>
               <td>{{p.email}}</td>
+              <td>
+                <span class="badge badge-secondary" v-if="p.status === 1">Ativo</span>
+              </td>
+              <td>
+                <router-link :to="{ name: 'EditBiker', params: { id: p.id }}">Editar</router-link>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -39,20 +47,20 @@ export default {
   name: 'ListarCiclista',
   data () {
     return {
-      prospects: []
+      bikers: []
     }
   },
   beforeMount: function() {
     console.log("beforeMount")
-    this.$http.get('http://localhost:8080/prospect').then(res => {
-      this.prospects = res.body
+    this.$http.get('http://localhost:8080/').then(res => {
+      this.bikers = res.body
       console.log(res)
     })
   },
   methods: {
     listar: function(event) {
-      this.$http.get('http://localhost:8080/prospect').then(res => {
-        this.prospects = res.data
+      this.$http.get('http://localhost:8080/').then(res => {
+        this.bikers = res.data
         console.log(res)
       })
 

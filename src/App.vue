@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Veeve</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="#"><img src="http://backoffice.courrieros.com.br/images/courrieros.png" width="42" height="42" alt=""> Courrieros</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="/#/cadastrar">Cadastrar</a>
+          <li class="nav-item">
+            <a class="nav-link" href="/#/bikers/">Biker</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/#/">Listar</a>
+            <a class="nav-link" href="/#/orders">OS</a>
           </li>
         </ul>
       </div>

@@ -4,6 +4,7 @@
 //$body-color: #000;
 
 $enable-rounded: true;
+$enable-shadows: true;
 
 $input-border-radius:     100rem;
 $input-border-radius-lg:  100rem;
@@ -12,5 +13,15 @@ $input-border-radius-sm:  100rem;
 
 
 // Colors
-$primary: #ffca00;
+//$body-bg: #EEE;
+//$body-color: #EEE;
+$primary: #43a047;
+$secondary: #76ff03;
+
+//$primary: #ffca00;
+
+
+
+// Tables
+//$table-head-bg: $secondary
 
